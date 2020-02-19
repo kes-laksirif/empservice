@@ -1,6 +1,5 @@
-"# empservice" 
-#REST API for EmPortal
-##Instructions to git
+# REST API for EmPortal
+## Instructions to git
 ```
 echo "# empservice" >> README.md
 git init
