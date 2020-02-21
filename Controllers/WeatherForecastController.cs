@@ -27,16 +27,6 @@ namespace empservice.Controllers
         [HttpGet]
         public string Get()
         {
-            //public IEnumerable<WeatherForecast> Get()
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
-
             string str = "DSN=alpha102b;HOST=user-PC;DB=alpha102;UID=laksiri;PWD=laksiri;PORT=16400; ";
             string sResult = "User List";
 
@@ -64,5 +54,20 @@ namespace empservice.Controllers
             return sResult;
 
         }
+
+        [HttpGet]
+        [Route("test")]
+        public IEnumerable<WeatherForecast> GetTest() 
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
+           
     }
 }
